@@ -6,6 +6,29 @@
 
 
 
+## **Extracted Columns/Features:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🛠️Tools/Technology:
 
 - ## **Selenium:**
@@ -27,10 +50,10 @@
  - ##### ***expected_conditions*** (EC) → Waits for specific conditions.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
- - ## **os:**
+ - ## **Os:**
  - handling file paths, creating directories.
 
- - ## **pandas:**
+ - ## **Pandas:**
  - Used for creating (DataFrames).
 
  - ## **Time:**
