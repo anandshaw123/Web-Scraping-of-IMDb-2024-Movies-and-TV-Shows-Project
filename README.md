@@ -66,7 +66,7 @@
  - ##### ***WebDriverWait*** → Waits for elements to load.
 
  - ##### ***expected_conditions*** (EC) → Waits for specific conditions.
--------------------------------------------------------------------------------------------------------------------------------------------------
+
 
  - ## **OS:**
  - handling file paths, creating directories.
