@@ -1,4 +1,4 @@
-# Web Scraping of IMDb Movies and TV Shows 2024 Project
+# Web Scraping of IMDb 2024 Movies and TV Shows Project:
 
 
 
@@ -8,26 +8,33 @@
 
 ## 🛠️Tools/Technology:
 
-### **Selenium:** Used for web scraping and browser automation.
-#### Modules:
-webdriver → Controls the browser.
+- ## **Selenium:**
+ - Used for web scraping and browser automation.
 
-Service → Runs the web driver as a service.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ - ### Selenium Modules:
 
-Options → Sets browser options.
+ - ##### ***webdriver*** → Controls the browser.
 
-By → Locates HTML elements.
+ - ##### ***Service*** → Runs the web driver as a service.
 
-WebDriverWait → Waits for elements to load.
+ - ##### ***Options*** → Sets browser options.
 
-expected_conditions (EC) → Waits for specific conditions.
+ - ##### ***By*** → Locates HTML elements.
 
+ - ##### ***WebDriverWait*** → Waits for elements to load.
 
-### **os:** handling file paths, creating directories.
+ - ##### ***expected_conditions*** (EC) → Waits for specific conditions.
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
-### **pandas:** Used for creating (DataFrames).
+ - ## **os:**
+ - handling file paths, creating directories.
 
-### **Time:** Used to add delays.
+ - ## **pandas:**
+ - Used for creating (DataFrames).
+
+ - ## **Time:**
+ - Used to add delays.
 
 
 
