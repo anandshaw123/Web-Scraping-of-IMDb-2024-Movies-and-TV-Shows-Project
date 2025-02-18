@@ -12,7 +12,7 @@
  - Used for web scraping and browser automation.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
- - ### Selenium Modules:
+ - #### Selenium Modules:
 
  - ##### ***webdriver*** → Controls the browser.
 
