@@ -44,7 +44,6 @@ firefox_binary_path = "C://Program Files//Mozilla Firefox//firefox.exe"
 # Set Firefox options
 options = Options()
 options.binary_location = firefox_binary_path
-# options.add_argument("--headless")  # Uncomment for headless mode
 
 # Initialize WebDriver
 service = Service(gecko_driver_path)
