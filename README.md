@@ -55,27 +55,27 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------
  - #### Selenium Modules:
 
- - ##### ***webdriver*** → Controls the browser.
+ - ##### ***webdriver*** → `Controls the browser.`
 
- - ##### ***Service*** → Runs the web driver as a service.
+ - ##### ***Service*** → `Runs the web driver as a service.`
 
- - ##### ***Options*** → Sets browser options.
+ - ##### ***Options*** → `Sets browser options.`
 
- - ##### ***By*** → Locates HTML elements.
+ - ##### ***By*** → `Locates HTML elements.`
 
- - ##### ***WebDriverWait*** → Waits for elements to load.
+ - ##### ***WebDriverWait*** → `Waits for elements to load.`
 
- - ##### ***expected_conditions*** (EC) → Waits for specific conditions.
+ - ##### ***expected_conditions*** `(EC)` → `Waits for specific conditions.`
 
 
  - ## **OS:**
- - handling file paths, creating directories.
+ - `handling file paths, creating directories.`
 
  - ## **Pandas:**
- - Used for creating (DataFrames).
+ - `Used for creating (DataFrames).`
 
  - ## **Time:**
- - Used to add delays.
+ - `Used to add delays.`
 
 
 
