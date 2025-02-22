@@ -1,31 +1,3 @@
-# https://www.imdb.com/search/title/?release_date=2024-01-01,2024-12-31
-
-
-# https://www.scraperapi.com/web-scraping/selenium/
-
-# https://youtu.be/XI5_nsClCYI?si=wCmvniZNhkctKNGn
-
-
-## ~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~
-
-
-##SMOOTH SCROLLING KE LIYE
-    # button = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='ipc-title__wrapper']//h3[contains(@class, 'ipc-title__text')]/span[text()='Details']")))
-
-    # # Smooth Scroll using JavaScript Loop
-    # for i in range(0, 100, 5):  # धीरे-धीरे स्क्रॉल करने के लिए
-    #     driver.execute_script(f"window.scrollBy(0, {i});")
-    #     time.sleep(0.05)  # थोड़ा इंतजार ताकि स्मूथ इफेक्ट आए
-
-    # time.sleep(2)  # कुछ सेकंड रुकें
-
-    # # Scroll directly to the element
-    # driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", button)
-    # time.sleep(3) 
-
-
-##~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~__~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~
-
 ## Extracted the data and save into HTML file//
 
 from selenium import webdriver
@@ -37,28 +9,22 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import time
 
-# GeckoDriver और Firefox का सही path
 gecko_driver_path = "C://Users//anand//Desktop//imdb//geckodriver-v0.35.0-win32//geckodriver.exe"
 firefox_binary_path = "C://Program Files//Mozilla Firefox//firefox.exe"
 
-# Firefox options सेट करें
+
 options = Options()
 options.binary_location = firefox_binary_path
 
-# GeckoDriver सर्विस सेट करें
 service = Service(gecko_driver_path)
 
-# WebDriver इनिशियलाइज़ करें
 driver = webdriver.Firefox(service=service, options=options)
 
-# IMDb Page Open Karein
 driver.get('https://www.imdb.com/search/title/?release_date=2024-01-01,2024-12-31')
 
-# WebDriverWait define करें
 wait = WebDriverWait(driver, 10)
 max_clicks = 2410617 ## Total Page
 
-# यूनिक लिंक स्टोर करने के लिए सेट
 Unique_Links = set()
 
 
@@ -69,52 +35,28 @@ for _ in range(max_clicks):
 
         # Scroll into view
         driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", button)
-        time.sleep(2)  # स्क्रॉल सेटल होने के लिए
+        time.sleep(2) 
 
         # Ensure the button is clickable
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(@class, 'ipc-see-more')]/button")))
 
-        # Click using JavaScript to avoid out-of-bounds issue
         driver.execute_script("arguments[0].click();", button)
 
-        time.sleep(1)  # **1 सेकंड वेट करने के बाद डेटा एक्सट्रैक्ट करना स्टार्ट करेंगे**
+        time.sleep(1) 
 
-        # Data Extraction
-        file = 0
         num = 0
 
         elements = driver.find_elements(By.CLASS_NAME, "ipc-metadata-list-summary-item")
 
         for element in elements:
-            # HTML extract & save
-            htmls = element.get_attribute("outerHTML")
-            with open(f"data/Extracted_{file}.html", "w", encoding="utf-8") as f:
-                f.write(htmls)
-
-
-
-            # Find and save links into CSV/Excel File.
-            # try:
-            #     link = element.find_element(By.TAG_NAME, "a")
-            #     href = link.get_attribute("href")
-            #     clean_link = href.split("?")[0]### '?' के बाद का हिस्सा हटाना
-            #     if clean_link not in Unique_Links: ### सिर्फ यूनिक लिंक स्टोर करना
-            #         Unique_Links.add(clean_link)
-
-            # except Exception as obj:
-            #     print(f"Link Extraction Error OMG: {obj}")
-
-
-
             # Find and save links into TXT file
             try:
                 link = element.find_element(By.TAG_NAME, "a")
                 href = link.get_attribute("href")
-                clean_link = href.split("?")[0]  # '?' के बाद का हिस्सा हटाना
-                if clean_link not in Unique_Links:  # सिर्फ यूनिक लिंक स्टोर करना
+                clean_link = href.split("?")[0]  
+                if clean_link not in Unique_Links:  
                     Unique_Links.add(clean_link)
 
-                    # लिंक को फ़ाइल में सेव करें
                     with open(f"Links/Extracted_{num}.txt", "w", encoding="utf-8") as f:
                         f.write(clean_link)
 
@@ -122,20 +64,16 @@ for _ in range(max_clicks):
                 print(f"Link Extraction Error OMG: {obj}")
 
 
-            file += 1
             num += 1
 
-        time.sleep(3)  #5 sec **Next क्लिक से पहले वेट करें ताकि नया डेटा लोड हो** 
+        time.sleep(3) 
     
     except Exception as e:
         print(f"Error Brother OMG: {e}")
         break
 
-time.sleep(30)  # **एंड में 30 सेकंड वेट करने के लिए**
+time.sleep(30) 
 driver.quit()
-
-df = pd.DataFrame({"Links": list(Unique_Links)})
-df.to_csv("Links.csv", index=False, encoding="utf-8")
 
 
 
