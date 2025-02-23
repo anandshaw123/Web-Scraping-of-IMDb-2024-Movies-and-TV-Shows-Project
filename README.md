@@ -1,8 +1,7 @@
-# Web Scraping of IMDb 2024 Movies and TV Shows Project:
+# 🎬 Web Scraping of IMDb 2024 Movies and TV Shows Project!
 
 
-
-![IMDB Web Scraping Project](https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg)
+![IMDB Web Scraping Project](https://github.com/user-attachments/assets/3e90e7d7-a7fc-4605-8743-11d5e6458f54)
 
 
 
