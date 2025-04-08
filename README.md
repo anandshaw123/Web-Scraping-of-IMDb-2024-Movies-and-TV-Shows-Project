@@ -1,4 +1,4 @@
-# 🎬 **Web Scraping of IMDb 2024 Movies and TV Shows Project!**
+# 🎬 **AutoMate Web Scraping of IMDb 2024 Movies and TV Shows Project!**
 
 
 
@@ -80,4 +80,4 @@
 
 
 
-
+# Selenium # Python # Web Scraping
