@@ -15,7 +15,7 @@
   
  - `Movie_Name` - The title of the movie.
    
- - `Genres` - The categories or genres the movie falls into (e.g., Horror, Drama).
+ - `Genres` - The categories or genres the movie falls into (Horror, Drama).
    
  - `Overview` - A short description of the movie's plot.
    
@@ -31,7 +31,7 @@
    
  - `Revenue` - The total earnings from the movie.
    
- - `Run_Time` - The length of the movie (e.g., 2 hours 12 minutes).
+ - `Run_Time` - The length of the movie (2 hours 12 minutes).
    
  - `Tagline` - A short promotional phrase for the movie.
    
