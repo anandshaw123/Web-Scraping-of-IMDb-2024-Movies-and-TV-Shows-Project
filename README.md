@@ -54,7 +54,7 @@
  - Used for web scraping and browser automation.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
- - #### Selenium Modules:
+ - #### Selenium Modules For Dynamic Website:
 
  - ##### ***webdriver*** → `Controls the browser.`
 
